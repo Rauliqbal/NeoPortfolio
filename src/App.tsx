@@ -15,16 +15,14 @@ import Footer from './components/Footer';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-   useEffect(() => {
+  useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      direction: 'vertical',
-      gestureDirection: 'vertical',
-      smooth: true,
-      mouseMultiplier: 1,
-      smoothTouch: false,
+      wheelMultiplier: 1,
       touchMultiplier: 2,
+      smoothWheel: true,
+      syncTouch: false,
     });
 
     lenis.on('scroll', ScrollTrigger.update);
@@ -52,14 +50,14 @@ function App() {
       <CustomCursor />
       <main>
         <Hero />
-        <Intro/>
-        <Work/>
-        <Process/>
-        <Manifesto/>
-        <Service/>
-        <Marquee/>
+        <Intro />
+        <Work />
+        <Process />
+        <Manifesto />
+        <Service />
+        <Marquee />
       </main>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
