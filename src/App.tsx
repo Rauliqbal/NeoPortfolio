@@ -7,6 +7,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Intro from './components/Intro';
 import Work from './components/Work';
 import Process from './components/Process';
+import Manifesto from './components/Manifesto';
+import Service from './components/Service';
+import Marquee from './components/Marquee';
+import Footer from './components/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,7 +55,11 @@ function App() {
         <Intro/>
         <Work/>
         <Process/>
+        <Manifesto/>
+        <Service/>
+        <Marquee/>
       </main>
+      <Footer/>
     </div>
   )
 }

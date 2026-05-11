@@ -44,7 +44,7 @@ export default function Intro() {
              <span className="char">I</span>
              <span className="char font-serif italic font-light text-gray-400 lowercase">don't just</span>
              <span className="char">build</span>
-          </div>
+          </div>  
 
           <div className="intro-line-wrap overflow-hidden flex flex-wrap items-baseline gap-4 pl-[5vw]">
              <span className="char stroke-text text-transparent">WEB</span>

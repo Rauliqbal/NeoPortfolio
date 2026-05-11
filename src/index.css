@@ -2,8 +2,9 @@
 
 @theme {
   --font-body: "Manrope";
-  --font-serif: "Playfair Display";
+  --font-serif:  'Britney', cursive;
   --font-heading: "Syne";
+  --font-britney: 'Kihim', sans-serif;
 
   --color-foreground: #e1e1e1;
   --color-background: #050505;
@@ -13,120 +14,60 @@
   html {
     @apply w-screen overflow-x-hidden scroll-smooth;
   }
+  
   body {
-    @apply font-body text-foreground bg-background w-full relative overflow-x-hidden;
-
-    -webkit-font-smoothing: antialiased;
+    @apply font-body text-foreground bg-background w-full relative overflow-x-hidden antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  .noise-overlay {
-    @apply fixed top-0 left-0 w-full h-full pointer-events-none z-50 opacity-15 bg-[url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")]
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-extrabold leading-[0.9] uppercase tracking-[-0.02em];
+  }
+
+  a {
+    @apply no-underline cursor-none;
+    color: inherit;
+  }
+
+  ul {
+    @apply list-none p-0 m-0;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-0 bg-transparent;
   }
 }
 
-/* Noise Overlay */
-.noise-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-}
+@layer components {
+  .noise-overlay {
+    @apply fixed top-0 left-0 w-full h-full pointer-events-none z-9999 opacity-[0.04];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
 
-/* html.lenis, html.lenis body {
-  height: auto;
-}
+  .container {
+    @apply max-w-[1800px] mx-auto px-[4vw] w-full;
+  }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
+  .section-padding {
+    @apply py-[12vh];
+  }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
+  .stroke-text {
+    @apply text-transparent;
+    -webkit-text-stroke: 1px rgba(147, 147, 147);
+  }
 
-.lenis.lenis-stopped {
-  overflow: hidden;
-} */
+  .font-serif-italic {
+    @apply font-serif italic font-normal;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  line-height: 0.9;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-}
+  .custom-cursor {
+    @apply fixed top-0 left-0 w-[15px] h-[15px] bg-white rounded-full pointer-events-none z-10000 mix-blend-exclusion;
+    @apply transition-[width,height] duration-300 ease-[cubic-bezier(0.19,1,0.22,1)];
+    transform: translate(-50%, -50%);
+  }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  cursor: none;
-}
-
-ul {
-  list-style: none;
-}
-
-/* Utility Classes */
-.container {
-  max-width: 1800px;
-  margin: 0 auto;
-  padding: 0 4vw;
-  width: 100%;
-}
-
-.section-padding {
-  padding: 12vh 0;
-}
-
-/* Typography Effects */
-.stroke-text {
-  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
-  color: transparent;
-}
-
-.font-serif-italic {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-weight: 400;
-}
-
-/* Custom Cursor */
-.custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 15px;
-  height: 15px;
-  background-color: white;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 10000;
-  mix-blend-mode: exclusion;
-  transition:
-    width 0.3s cubic-bezier(0.19, 1, 0.22, 1),
-    height 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-  /* GSAP handles transform, but we set initial state just in case */
-  transform: translate(-50%, -50%);
-}
-
-.custom-cursor.hovered {
-  width: 80px;
-  height: 80px;
-  background-color: white;
-  mix-blend-mode: exclusion;
-}
-
-::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  .custom-cursor.hovered {
+    @apply w-[80px] h-[80px];
+  }
 }
