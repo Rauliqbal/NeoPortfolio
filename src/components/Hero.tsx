@@ -9,86 +9,145 @@ export default function Hero() {
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline();
+  const ctx = gsap.context(() => {
+    const tl = gsap.timeline();
 
-      gsap.set(".hero-char", { yPercent: 120, rotateZ: 10 });
+    // Hero text animation
+    gsap.set('.hero-char', {
+      yPercent: 120,
+      rotateZ: 10,
+    });
 
-      tl.to(".hero-char", {
-        yPercent: 0,
-        rotateZ: 0,
-        stagger: 0.05,
-        duration: 1.2,
-        ease: "power4.out",
-        delay: 0.5
-      });
-      
-      gsap.from(".hero-fade", {
-        opacity: 0,
-        y: 20,
-        duration: 1,
-        stagger: 0.2,
-        delay: 1
-      });
+    tl.to('.hero-char', {
+      yPercent: 0,
+      rotateZ: 0,
+      stagger: 0.05,
+      duration: 1.2,
+      ease: 'power4.out',
+      delay: 0.5,
+    });
 
-      gsap.to(".hero-bg", {
-        yPercent: 30,
-        scale: 1.1,
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true
-        }
-      });
-      
-    }, containerRef);
+    // Initial states biar smooth
+    gsap.set('.gradient-1', { x: 0, y: 0 });
+    gsap.set('.gradient-2', { x: 0, y: 0 });
+    gsap.set('.gradient-3', { x: 0, y: 0 });
 
-    return () => ctx.revert();
-  }, []);
+    // Floating ambient animation
+    gsap.to('.gradient-1', {
+      x: 150,
+      y: -100,
+      duration: 12,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      force3D: true,
+    });
+
+    gsap.to('.gradient-2', {
+      x: -120,
+      y: 80,
+      duration: 15,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      force3D: true,
+    });
+
+    gsap.to('.gradient-3', {
+      x: 100,
+      y: -120,
+      duration: 18,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      force3D: true,
+    });
+
+    // Entire ambient breathing effect
+    gsap.to('.gradient-layer', {
+      scale: 1.08,
+      rotation: 1.5,
+      duration: 10,
+      repeat: -1,
+      yoyo: true,
+      ease: 'power1.inOut',
+      transformOrigin: 'center center',
+    });
+
+  }, containerRef);
+
+  return () => ctx.revert();
+}, []);
 
   const title = "SCALABILITY";
 
   return (
     <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-[#050505] text-[#e1e1e1]">
-      <div className="hero-bg absolute inset-0 z-0 opacity-40">
-         <img 
-           src="/image/hero_bg.jpg" 
-           alt="Hero background"
-           className="w-full h-full object-cover grayscale contrast-125 scale-105"
-         />
-         <div className="absolute inset-0 bg-[#050505]/50 mix-blend-multiply"></div>
-         <div className="absolute inset-0 bg-linear-to-t from-[#050505] via-transparent to-transparent"></div>
+      <div className="hero-bg absolute inset-0 z-0 overflow-hidden bg-[#030712]">
+
+        {/* Base Gradient */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#274c77_0%,#0f2747_35%,#020617_100%)]" />
+
+        {/* Main Blur Lights */}
+        <div className="gradient-layer absolute inset-0">
+
+          {/* Top Left Glow */}
+          <div className="gradient-1 absolute will-change-transform pointer-events-none -top-[15%] -left-[10%] w-[900px] h-[900px] rounded-full bg-blue-300/20 blur-[60px]" />
+
+          {/* Center Soft Light */}
+          <div className="gradient-2 absolute top-[20%] left-[35%] w-[700px] h-[700px] rounded-full bg-sky-200/10 blur-[180px]" />
+
+          {/* Bottom Right Glow */}
+          <div className="gradient-3 absolute -bottom-[15%] -right-[10%] w-[900px] h-[900px] rounded-full bg-blue-100/20 blur-[200px]" />
+
+          {/* Extra cinematic dark blob */}
+          <div className="absolute bottom-[10%] left-[20%] w-[500px] h-[500px] rounded-full bg-black/40 blur-[120px]" />
+        </div>
+
+        {/* Soft vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.45)_100%)]" />
+
+        {/* Dark cinematic overlay */}
+        <div className="absolute inset-0 bg-black/15" />
+
+        {/* Premium grain texture */}
+        <div
+          className="absolute inset-0 opacity-[0.03] mix-blend-soft-light"
+          style={{
+            backgroundImage:
+              'url("https://grainy-gradients.vercel.app/noise.svg")',
+          }}
+        />
       </div>
 
       <div className="relative z-10 w-full h-full flex flex-col justify-between p-4 sm:p-6 md:p-12">
         <div className="flex justify-between items-start hero-fade">
-           <div className="flex flex-col gap-2 md:gap-3">
-             <div className="text-[10px] md:text-xs font-mono uppercase tracking-widest opacity-60">
-               ( Est. 2022 )
-             </div>
-             <div className="hidden md:block text-xs font-mono uppercase tracking-wider opacity-40 max-w-[200px]">
-               Full Stack Developer<br/>
-               <span className="text-white/60">& UI/UX Enthusiast</span>
-             </div>
-           </div>
-           <div className="hidden md:flex text-right flex-col items-end gap-2 md:gap-3">
-             <div className="flex items-center gap-2">
-               <span className="text-xs font-mono uppercase tracking-wider opacity-50">Available for freelance</span>
-               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-             </div>
-             <div className="text-xs font-mono uppercase tracking-wider opacity-50">
-               Bekasi, Indonesian
-             </div>
-             <div className="flex gap-2 mt-2">
-               <a href="https://github.com/Abhay2204" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors text-xs">
-                 GIT
-               </a>
-               <a href="https://www.linkedin.com/in/abhaymallick2002/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors text-xs">
-                 LIN
-               </a>
-             </div>
-           </div>
+          <div className="flex flex-col gap-2 md:gap-3">
+            <div className="text-[10px] md:text-xs font-mono uppercase tracking-widest opacity-60">
+              ( Est. 2022 )
+            </div>
+            <div className="hidden md:block text-xs font-mono uppercase tracking-wider opacity-40 max-w-[200px]">
+              Full Stack Developer<br />
+              <span className="text-white/60">& UI/UX Enthusiast</span>
+            </div>
+          </div>
+          <div className="hidden md:flex text-right flex-col items-end gap-2 md:gap-3">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-mono uppercase tracking-wider opacity-50">Available for freelance</span>
+              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+            </div>
+            <div className="text-xs font-mono uppercase tracking-wider opacity-50">
+              Bekasi, Indonesian
+            </div>
+            <div className="flex gap-2 mt-2">
+              <a href="https://github.com/Rauliqbal  " target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors text-xs">
+                GIT
+              </a>
+              <a href="https://www.linkedin.com/in/muhamad-raul-iqbal/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/20 rounded-full flex items-center justify-center hover:bg-white hover:text-black transition-colors text-xs">
+                LIN
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Decorative elements on right side - hidden on mobile */}
@@ -115,7 +174,7 @@ export default function Hero() {
               ))}
             </div>
           </h1>
-          
+
           <div className="flex flex-col md:flex-row md:items-end justify-between mt-6 md:mt-12 border-t border-white/20 pt-4 md:pt-8 hero-fade gap-4 md:gap-6">
             <div className="flex-1 max-w-2xl">
               <p className="text-sm sm:text-base md:text-xl lg:text-2xl font-serif-italic text-gray-300 leading-snug mb-4 md:mb-6">
@@ -141,9 +200,9 @@ export default function Hero() {
               </div>
             </div>
             <div className="flex-shrink-0">
-               <span className="inline-block px-6 md:px-8 py-3 md:py-4 border border-white/30 rounded-full uppercase text-[10px] md:text-xs tracking-[0.2em] hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer">
-                 Scroll Down
-               </span>
+              <span className="inline-block px-6 md:px-8 py-3 md:py-4 border border-white/30 rounded-full uppercase text-[10px] md:text-xs tracking-[0.2em] hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer">
+                Scroll Down
+              </span>
             </div>
           </div>
         </div>
