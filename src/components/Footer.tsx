@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="section-padding container relative z-10">
         
         <div className="mb-32 flex flex-col items-center text-center">
-            <h2 className="text-[5vw] leading-none mb-8 font-serif-italic">Have an idea?</h2>
+            <p className="text-[5vw] leading-none mb-8 font-serif-italic">Have an idea?</p>
             <a href="mailto:muhamadrauliqbal.13@gmail.com" className="text-[8vw] md:text-[10vw] font-bold leading-none hover:text-white transition-colors duration-300 stroke-text hover:stroke-0 border-b-2 border-transparent hover:border-white">
                 LET'S TALK
             </a>
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-32 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 uppercase tracking-widest">
-            <span>&copy; 2022 - {date}  MUHAMAD RAUL • BUILDING FOR TOMORROW</span>
+            <span>&copy; 2022 - {date}  RAULIQBAL • BUILDING FOR TOMORROW</span>
             <div className="flex gap-8 mt-4 md:mt-0">
                 <a href="#" className="hover:text-white">Privacy Policy</a>
                 <a href="#" className="hover:text-white">Terms of Service</a>
@@ -58,7 +58,7 @@ export default function Footer() {
       
       {/* Giant Background Text */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-5">
-         <h1 className="text-[20vw] leading-[0.7] font-black text-center translate-y-[20%]">RAUL</h1>
+         <p className="text-[20vw] leading-[0.7] font-black text-center translate-y-[20%]">RAUL</p>
       </div>
     </footer>
   );

@@ -109,7 +109,7 @@ export default function Service() {
 
       <div className="container relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20">
-          <h2 className="text-6xl md:text-8xl font-bold mb-8 md:mb-0">My<br />Expertise</h2>
+          <h2 className="text-6xl md:text-8xl font-bold mb-8 md:mb-0">My <br />Expertise</h2>
           <p className="max-w-sm text-sm md:text-lg uppercase tracking-wide leading-relaxed text-gray-400 pt-4">
             Crafting scalable digital solutions through thoughtful engineering, modern technologies, and seamless user experiences.
           </p>

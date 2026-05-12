@@ -52,13 +52,13 @@ export default function Manifesto() {
 
       <div className="relative z-10 container text-center">
         {statements.map((text, i) => (
-          <h2
+          <p
             key={i}
             ref={(el) => { textRefs.current[i] = el }}
             className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-[6vw] md:text-[5vw] font-heading font-bold uppercase leading-tight mix-blend-difference ${i === 0 ? 'opacity-100' : 'opacity-0 scale-90 blur-sm'}`}
           >
             {text}
-          </h2>
+          </p>
         ))}
       </div>
 

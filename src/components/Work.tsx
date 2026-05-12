@@ -99,12 +99,12 @@ export default function Work() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="work" className="relative bg-[#050505] text-white py-24 overflow-hidden">
+    <section ref={sectionRef} id="work" className="relative bg-background text-white py-24 overflow-hidden">
       <div className="container">
         <div className="mb-24 flex flex-col items-center text-center">
-           <h2 className="text-[12vw] leading-[0.8] font-heading font-black mix-blend-exclusion z-10">
+           <span className="text-[12vw] leading-[0.8] font-heading font-black mix-blend-exclusion z-10">
              SELECTED
-           </h2>
+           </span>
            <h2 className="text-[12vw] leading-[0.8] font-heading font-black text-transparent stroke-text z-10 -mt-4 md:-mt-10">
              WORKS
            </h2>

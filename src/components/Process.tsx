@@ -53,7 +53,7 @@ export default function Process() {
       <div className="container">
         <div className="flex flex-col md:flex-row mb-24 justify-between items-end">
           <h2 className="text-6xl md:text-8xl font-bold mb-8 md:mb-0">
-            THE<br/>PROCESS
+            THE <br/>PROCESS
           </h2>
           <p className="max-w-md text-sm md:text-lg mt-8 md:mt-0 font-medium">
             Our methodology is a blend of rigorous strategy and unbridled creativity.

@@ -145,9 +145,9 @@ export default function Intro() {
               />
             </div>
             <div>
-              <span className="uppercase tracking-[0.2em] text-zinc-500 text-sm">
+              <h2 className="uppercase tracking-[0.2em] text-zinc-500 text-sm">
                 Profile
-              </span>
+              </h2>
 
               <h1 className="mt-2 text-3xl font-semibold text-white">
                 Raul Iqbal
