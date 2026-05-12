@@ -135,12 +135,12 @@ export default function Intro() {
         <div className="mt-28 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           
           {/* Profile */}
-          <div className="profile-card flex items-start gap-6">
+          <div className="profile-card flex flex-col md:flex-row items-start gap-6">
             
-            <div className="profile-image w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border border-zinc-800 shrink-0">
+            <div className="profile-image mx-auto w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border border-zinc-800 shrink-0">
               <img
                 src="./avatar.jpeg"
-                alt="Muhamad Raul"
+                alt="Raul Iqbal"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
@@ -149,9 +149,9 @@ export default function Intro() {
                 Profile
               </span>
 
-              <h3 className="mt-2 text-3xl font-semibold text-white">
-                Muhamad Raul
-              </h3>
+              <h1 className="mt-2 text-3xl font-semibold text-white">
+                Raul Iqbal
+              </h1>
 
               <p className="mt-5 text-zinc-400 leading-relaxed max-w-lg text-lg">
                 Software Engineer focused on building scalable web applications

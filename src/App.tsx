@@ -11,6 +11,7 @@ import Manifesto from './components/Manifesto';
 import Service from './components/Service';
 import Marquee from './components/Marquee';
 import Footer from './components/Footer';
+import { Helmet } from 'react-helmet-async';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,20 +46,90 @@ function App() {
     };
   }, []);
   return (
-    <div className="w-full min-h-screen">
-      <div className="noise-overlay"></div>
-      <CustomCursor />
-      <main>
-        <Hero />
-        <Intro />
-        <Work />
-        <Process />
-        <Manifesto />
-        <Service />
-        <Marquee />
-      </main>
-      <Footer />
-    </div>
+    <>
+      <Helmet>
+        <title>Rauliqbal - Fullstack Engineer</title>
+        <meta
+          name="description"
+          content="Fullstack Engineer focused on building scalable systems, high-performance applications, and seamless digital experiences using modern technologies."
+        />
+        <meta
+          name="keywords"
+          content="Rauliqbal, Muhamad Raul Iqbal, Fullstack Engineer, Full Stack Developer Indonesia, React Developer, Spring Boot Developer, Kotlin Developer, Flutter Developer, Portfolio Developer"
+        />
+        <meta name="author" content="Muhamad Raul Iqbal" />
+        <meta name="robots" content="index, follow" />
+        {/* Canonical */}
+        <link rel="canonical" href="https://rauliqbal.my.id/" />
+        {/* Open Graph */}
+        <meta
+          property="og:title"
+          content="Rauliqbal - Fullstack Engineer"
+        />
+        <meta
+          property="og:description"
+          content="Fullstack Engineer focused on building scalable systems, high-performance applications, and seamless digital experiences using modern technologies."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rauliqbal.my.id/" />
+        <meta
+          property="og:image"
+          content="https://rauliqbal.my.id/og-preview.png"
+        />
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Rauliqbal - Fullstack Engineer"
+        />
+        <meta
+          name="twitter:description"
+          content="Fullstack Engineer focused on building scalable systems, high-performance applications, and seamless digital experiences using modern technologies."
+        />
+        <meta
+          name="twitter:image"
+          content="https://rauliqbal.my.id/og-preview.png"
+        />
+        <meta name="theme-color" content="#050505" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Muhamad Raul Iqbal',
+            alternateName: 'Rauliqbal',
+            url: 'https://rauliqbal.my.id',
+            jobTitle: 'Fullstack Engineer',
+            sameAs: [
+              'https://github.com/Rauliqbal',
+              'https://www.linkedin.com/in/muhamad-raul-iqbal/',
+            ],
+            knowsAbout: [
+              'React',
+              'Spring Boot',
+              'Java',
+              'Kotlin',
+              'Flutter',
+              'Node.js',
+              'Fullstack Engineering',
+            ],
+          })}
+        </script>
+      </Helmet>
+      <div className="w-full min-h-screen">
+        <div className="noise-overlay"></div>
+        <CustomCursor />
+        <main>
+          <Hero />
+          <Intro />
+          <Work />
+          <Process />
+          <Manifesto />
+          <Service />
+          <Marquee />
+        </main>
+        <Footer />
+      </div>
+    </>
   )
 }
 

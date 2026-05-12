@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rauliqbal.my.id/sitemap.xml

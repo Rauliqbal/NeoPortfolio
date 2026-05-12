@@ -18,7 +18,7 @@ const Loader = ({ loading, loaderRef }: LoaderProps) => {
       className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-[#050505]"
     >
       {/* Glow background */}
-      <div className="absolute h-[500px] w-[500px] rounded-full bg-blue-500/20 blur-[120px]" />
+      <div className="absolute h-[540px] w-[500px] rounded-full bg-linear-to-tr from-cyan-400/40 to-indigo-600/70 blur-[140px]" />
 
       {/* Text */}
       <h1 className="loader-text relative z-10 text-[10vw] font-black tracking-[0.2em] text-white md:text-[5vw]">
@@ -71,7 +71,7 @@ export default function Hero() {
         .to(loaderRef.current, {
           opacity: 0,
           scale: 1.82,
-          filter: 'blur(16px)',
+          filter: 'blur(8px)',
           duration: 1.3,
           ease: 'power4.inOut',
           onComplete: () => setLoading(false),
@@ -160,13 +160,13 @@ export default function Hero() {
           <div className="gradient-layer absolute inset-0">
 
             {/* Top Left Glow */}
-            <div className="gradient-1 absolute will-change-transform pointer-events-none -top-[15%] -left-[10%] w-[900px] h-[900px] rounded-full bg-blue-700/20 blur-[60px]" />
+            <div className="gradient-1 transform-gpu absolute will-change-transform pointer-events-none -top-[15%] -left-[10%] w-[900px] h-[900px] rounded-full bg-blue-700/20 blur-[60px]" />
 
             {/* Center Soft Light */}
-            <div className="gradient-2 absolute top-[20%] left-[35%] w-[700px] h-[700px] rounded-full bg-sky-500/50 blur-[180px] " />
+            <div className="gradient-2 transform-gpu will-change-transform absolute top-[20%] left-[35%] w-[700px] h-[700px] rounded-full bg-sky-500/50 blur-[80px] " />
 
             {/* Bottom Right Glow */}
-            <div className="gradient-3 absolute -bottom-[15%] -right-[10%] w-[900px] h-[900px] rounded-full bg-indigo-500/40 blur-[120px]" />
+            <div className="gradient-3 transform-gpu will-change-transform absolute -bottom-[15%] -right-[10%] w-[900px] h-[900px] rounded-full bg-indigo-500/40 blur-[120px]" />
 
             {/* Extra cinematic dark blob */}
             <div className="absolute bottom-[10%] left-[20%] w-[500px] h-[500px] rounded-full bg-black/40 blur-[80px]" />
@@ -235,13 +235,13 @@ export default function Hero() {
           </div>
 
           <div className="relative mb-8 md:mb-12">
-            <h1 ref={titleRef} className="text-[10vw] sm:text-[8vw] md:text-[7vw] leading-[1.1] font-heading font-black tracking-tight text-white">
+            <h3 ref={titleRef} className="text-[10vw] sm:text-[8vw] md:text-[7vw] leading-[1.1] font-heading font-black tracking-tight text-white">
               <div className="flex flex-wrap">
                 {title.split("").map((char, i) => (
                   <span key={i} className="hero-char inline-block origin-bottom will-change-transform">{char}</span>
                 ))}
               </div>
-            </h1>
+            </h3>
 
             <div className="flex flex-col md:flex-row md:items-end justify-between mt-6 md:mt-12 border-t border-white/20 pt-4 md:pt-8 hero-fade gap-4 md:gap-6">
               <div className="flex-1 max-w-2xl">
