@@ -1,17 +1,13 @@
-import Hero from './components/Hero'
 import CustomCursor from './components/CustomCursor'
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Intro from './components/Intro';
-import Work from './components/Work';
-import Process from './components/Process';
-import Manifesto from './components/Manifesto';
-import Service from './components/Service';
-import Marquee from './components/Marquee';
 import Footer from './components/Footer';
 import { Helmet } from 'react-helmet-async';
+import { Route, Routes } from 'react-router-dom';
+import Home from './views/Home';
+import WorkDetail from './views/WorkDetail';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,20 +111,15 @@ function App() {
           })}
         </script>
       </Helmet>
-      <div className="w-full min-h-screen">
+      <CustomCursor />
+      <main className="w-full min-h-screen">
         <div className="noise-overlay"></div>
-        <CustomCursor />
-        <main>
-          <Hero />
-          <Intro />
-          <Work />
-          <Process />
-          <Manifesto />
-          <Service />
-          <Marquee />
-        </main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/works/:slug" element={<WorkDetail />} />
+        </Routes>
         <Footer />
-      </div>
+      </main>
     </>
   )
 }

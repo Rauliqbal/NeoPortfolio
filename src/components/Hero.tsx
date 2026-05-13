@@ -5,12 +5,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 type LoaderProps = {
-  loading: boolean;
   loaderRef: React.RefObject<HTMLDivElement | null>;
 };
 
-const Loader = ({ loading, loaderRef }: LoaderProps) => {
-  if (!loading) return null;
+const Loader = ({ loaderRef }: LoaderProps) => {
 
   return (
     <div
@@ -32,7 +30,6 @@ export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const loaderRef = useRef<HTMLDivElement>(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -40,11 +37,11 @@ export default function Hero() {
 
       // Loader Animation
       tl.set('.loader-text', {
-          opacity: 0,
-          scale: 0.9,
-          filter: 'blur(40px)',
-          letterSpacing: '0.5em',
-        })
+        opacity: 0,
+        scale: 0.9,
+        filter: 'blur(40px)',
+        letterSpacing: '0.5em',
+      })
 
         .to('.loader-text', {
           opacity: 1,
@@ -61,7 +58,7 @@ export default function Hero() {
             duration: 1.4,
             ease: 'power4.out',
           },
-          '<' 
+          '<'
         )
         .to('.loader-text', {
           scale: 1.05,
@@ -70,11 +67,16 @@ export default function Hero() {
         })
         .to(loaderRef.current, {
           opacity: 0,
-          scale: 1.82,
-          filter: 'blur(8px)',
-          duration: 1.3,
+          scale: 1.12,
+          filter: 'blur(16px)',
+          duration: 1,
           ease: 'power4.inOut',
-          onComplete: () => setLoading(false),
+          pointerEvents: 'none',
+          onComplete: () => {
+            gsap.set(loaderRef.current, {
+              display: 'none',
+            });
+          },
         });
 
       // Hero text animation
@@ -149,7 +151,7 @@ export default function Hero() {
 
   return (
     <>
-      <Loader loading={loading} loaderRef={loaderRef} />
+      <Loader loaderRef={loaderRef} />
       <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-[#050505] text-[#e1e1e1]">
         <div className="hero-bg absolute inset-0 z-0 overflow-hidden bg-[#030712]">
 
@@ -159,33 +161,17 @@ export default function Hero() {
           {/* Main Blur Lights */}
           <div className="gradient-layer absolute inset-0">
 
-            {/* Top Left Glow */}
             <div className="gradient-1 transform-gpu absolute will-change-transform pointer-events-none -top-[15%] -left-[10%] w-[900px] h-[900px] rounded-full bg-blue-700/20 blur-[60px]" />
 
-            {/* Center Soft Light */}
             <div className="gradient-2 transform-gpu will-change-transform absolute top-[20%] left-[35%] w-[700px] h-[700px] rounded-full bg-sky-500/50 blur-[80px] " />
 
-            {/* Bottom Right Glow */}
             <div className="gradient-3 transform-gpu will-change-transform absolute -bottom-[15%] -right-[10%] w-[900px] h-[900px] rounded-full bg-indigo-500/40 blur-[120px]" />
 
-            {/* Extra cinematic dark blob */}
             <div className="absolute bottom-[10%] left-[20%] w-[500px] h-[500px] rounded-full bg-black/40 blur-[80px]" />
           </div>
 
-          {/* Soft vignette */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.45)_100%)]" />
-
-          {/* Dark cinematic overlay */}
           <div className="absolute inset-0 bg-black/15" />
-
-          {/* Premium grain texture */}
-          <div
-            className="absolute inset-0 opacity-[0.03] mix-blend-soft-light"
-            style={{
-              backgroundImage:
-                'url("https://grainy-gradients.vercel.app/noise.svg")',
-            }}
-          />
         </div>
 
         <div className="relative z-10 w-full h-full flex flex-col justify-between p-4 sm:p-6 md:p-12">
