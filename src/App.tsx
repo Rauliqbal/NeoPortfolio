@@ -7,7 +7,6 @@ import Footer from './components/Footer';
 import { Helmet } from 'react-helmet-async';
 import { Route, Routes } from 'react-router-dom';
 import Home from './views/Home';
-import WorkDetail from './views/WorkDetail';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -116,7 +115,6 @@ function App() {
         <div className="noise-overlay"></div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/works/:slug" element={<WorkDetail />} />
         </Routes>
         <Footer />
       </main>
