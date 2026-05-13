@@ -70,7 +70,7 @@ function App() {
         <meta property="og:url" content="https://rauliqbal.my.id/" />
         <meta
           property="og:image"
-          content="https://rauliqbal.my.id/og-preview.png"
+          content="https://rauliqbal.my.id/og-image.png"
         />
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -84,7 +84,7 @@ function App() {
         />
         <meta
           name="twitter:image"
-          content="https://rauliqbal.my.id/og-preview.png"
+          content="https://rauliqbal.my.id/og-image.png"
         />
         <meta name="theme-color" content="#050505" />
         <script type="application/ld+json">
