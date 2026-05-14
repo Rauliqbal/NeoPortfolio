@@ -101,16 +101,16 @@ export default function Service() {
 
       <div
         ref={revealRef}
-        className="fixed top-0 left-0 w-[300px] h-[400px] pointer-events-none z-50 opacity-0 scale-0 hidden md:block rounded-lg overflow-hidden mix-blend-exclusion"
+        className="fixed top-0 left-0 w-75 h-100 pointer-events-none z-50 opacity-0 scale-0 hidden md:block rounded-lg overflow-hidden mix-blend-exclusion"
         style={{ willChange: 'transform' }}
       >
         <img src={activeImage} alt="Service Preview" className="w-full h-full object-cover" />
       </div>
 
       <div className="container relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-20">
-          <h2 className="text-6xl md:text-8xl font-bold mb-8 md:mb-0">My <br />Expertise</h2>
-          <p className="max-w-sm text-sm md:text-lg uppercase tracking-wide leading-relaxed text-gray-400 pt-4">
+        <div className="flex flex-col md:flex-row justify-between md:items-end mb-20">
+          <h2 className="text-6xl md:text-8xl font-bold">My <br />Expertise</h2>
+          <p className="max-w-sm text-sm md:text-lg uppercase tracking-wide leading-relaxed text-gray-400 mt-8 md:mt-0">
             Crafting scalable digital solutions through thoughtful engineering, modern technologies, and seamless user experiences.
           </p>
         </div>

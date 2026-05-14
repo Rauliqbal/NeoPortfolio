@@ -51,11 +51,9 @@ export default function Process() {
   return (
     <section ref={sectionRef} className="section-padding bg-foreground text-background">
       <div className="container">
-        <div className="flex flex-col md:flex-row mb-24 justify-between">
-          <h2 className="text-5xl md:text-6xl lg:text-8xl font-bold ">
-            THE <br/>PROCESS
-          </h2>
-          <p className="max-w-md text-sm md:text-lg mt-8 md:mt-0 font-medium">
+        <div className="flex flex-col md:flex-row justify-between md:items-end mb-20">
+          <h2 className="text-6xl md:text-8xl font-bold">The <br />Process</h2>
+          <p className="max-w-sm text-sm md:text-lg uppercase tracking-wide leading-relaxed text-gray-600 mt-8 md:mt-0">
             Our methodology is a blend of rigorous strategy and unbridled creativity.
           </p>
         </div>
