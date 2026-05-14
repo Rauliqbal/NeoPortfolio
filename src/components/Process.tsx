@@ -53,7 +53,7 @@ export default function Process() {
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between md:items-end mb-20">
           <h2 className="text-6xl md:text-8xl font-bold">The <br />Process</h2>
-          <p className="max-w-sm text-sm md:text-lg uppercase tracking-wide leading-relaxed text-gray-600 mt-8 md:mt-0">
+          <p className="max-w-sm md:text-lg uppercase tracking-wide leading-relaxed text-gray-600 mt-8 md:mt-0">
             Our methodology is a blend of rigorous strategy and unbridled creativity.
           </p>
         </div>
@@ -80,10 +80,10 @@ export default function Process() {
               </div>
               
               <div 
-                className={`overflow-hidden transition-all duration-700 ease-out-expo ${openIndex === index ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'}`}
+                className={`overflow-hidden transition-all duration-700 ease-out-expo ${openIndex === index ? 'max-h-75 opacity-100' : 'max-h-0 opacity-0'}`}
               >
-                <div className="pb-12 md:pl-[120px] max-w-2xl">
-                  <p className="text-xl md:text-2xl leading-relaxed font-light">
+                <div className="pb-12 md:pl-30 max-w-2xl">
+                  <p className="md:text-xl leading-relaxed font-light">
                     {step.desc}
                   </p>
                 </div>
