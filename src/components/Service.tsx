@@ -129,13 +129,13 @@ export default function Service() {
                     <span className="text-xs font-mono text-gray-500 group-hover:text-white transition-colors">
                       0{service.id}
                     </span>
-                    <h3 className="text-3xl md:text-4xl font-normal group-hover:text-white transition-colors group-hover:md:translate-x-4 duration-500 uppercase">
+                    <h3 className="text-3xl md:text-4xl font-normal group-hover:text-white transition-all  duration-500 uppercase">
                       {service.title}
                     </h3>
                   </div>
 
                   <div className="flex items-center gap-4">
-                    <span className="text-xs uppercase tracking-widest opacity-0 md:opacity-100 group-hover:text-white transition-all transform translate-y-4 group-hover:translate-y-0 duration-500 delay-75">
+                    <span className="text-xs uppercase tracking-widest opacity-0 md:opacity-100 group-hover:text-white transition-all duration-500 delay-75">
                       {service.category}
                     </span>
                     <ArrowUpRight className="w-8 h-8 text-gray-500 group-hover:text-white group-hover:rotate-45 transition-all duration-500" />
@@ -144,7 +144,7 @@ export default function Service() {
 
                 <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                   <div className="overflow-hidden">
-                    <p className="max-w-2xl pr-20 md:pr-0 text-gray-400 mt-6 text-sm leading-relaxed group-hover:translate-x-8 group-hover:md:translate-x-12 transition-transform duration-500 delay-100">
+                    <p className="max-w-2xl pr-20 md:pr-0 text-gray-400 mt-6 text-sm md:text-lg leading-relaxed group-hover:translate-x-8 group-hover:md:translate-x-12 transition-transform duration-500 delay-100">
                       {service.description}
                     </p>
                   </div>

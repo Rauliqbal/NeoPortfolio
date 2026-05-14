@@ -68,7 +68,7 @@ export default function Process() {
               <div className="py-8 md:py-12 flex justify-between items-center pr-4">
                 <div className="flex items-baseline gap-8 md:gap-16">
                   <span className="font-mono text-sm md:text-base opacity-50">({step.num})</span>
-                  <h3 className="text-3xl md:text-6xl font-normal group-hover:translate-x-4 transition-transform duration-500 font-serif-italic">
+                  <h3 className="text-3xl md:text-6xl font-normal group-hover:translate-x-4 transition-transform duration-500 font-serif">
                     {step.title}
                   </h3>
                 </div>
