@@ -119,18 +119,17 @@ export default function Service() {
           {services.map((service) => (
             <li
               key={service.id}
-              className="group border-b border-gray-700 relative overflow-hidden cursor-pointer"
+              className="group border-b p-2 border-gray-700 relative overflow-hidden"
               onMouseEnter={() => handleMouseEnter(service.img)}
               onMouseLeave={handleMouseLeave}
             >
-              <div className="relative z-10 py-12 px-4 group-hover:px-8 transition-all duration-500">
-
+              <div className="relative z-10 py-12 md:px-4 group-hover:md:px-8 transition-all duration-500">
                 <div className="flex justify-between items-center">
-                  <div className="flex items-baseline gap-8">
+                  <div className="flex items-baseline gap-4 md:gap-8">
                     <span className="text-xs font-mono text-gray-500 group-hover:text-white transition-colors">
                       0{service.id}
                     </span>
-                    <h3 className="text-3xl md:text-4xl font-normal group-hover:text-white transition-colors group-hover:translate-x-4 duration-500 uppercase">
+                    <h3 className="text-3xl md:text-4xl font-normal group-hover:text-white transition-colors group-hover:md:translate-x-4 duration-500 uppercase">
                       {service.title}
                     </h3>
                   </div>
@@ -145,7 +144,7 @@ export default function Service() {
 
                 <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                   <div className="overflow-hidden">
-                    <p className="max-w-2xl text-gray-400 mt-6 text-lg leading-relaxed group-hover:translate-x-12 transition-transform duration-500 delay-100">
+                    <p className="max-w-2xl pr-20 md:pr-0 text-gray-400 mt-6 text-sm leading-relaxed group-hover:translate-x-8 group-hover:md:translate-x-12 transition-transform duration-500 delay-100">
                       {service.description}
                     </p>
                   </div>
