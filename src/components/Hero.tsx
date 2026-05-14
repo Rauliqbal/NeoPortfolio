@@ -19,7 +19,7 @@ const Loader = ({ loaderRef }: LoaderProps) => {
       <div className="absolute h-[540px] w-[500px] rounded-full bg-linear-to-tr from-cyan-400/40 to-indigo-600/70 blur-[140px]" />
 
       {/* Text */}
-      <h1 className="loader-text relative z-10 text-[10vw] font-black tracking-[0.2em] text-white md:text-[5vw]">
+      <h1 className="loader-text relative z-10 text-[5vw] md:text-[10vw] font-black tracking-[0.2em] text-white">
         RAULIQBAL
       </h1>
     </div>
@@ -221,7 +221,7 @@ export default function Hero() {
           </div>
 
           <div className="relative mb-8 md:mb-12">
-            <h3 ref={titleRef} className="text-[10vw] sm:text-[8vw] md:text-[7vw] leading-[1.1] font-heading font-black tracking-tight text-white">
+            <h3 ref={titleRef} className="text-[8vw] md:text-[7vw] leading-[1.1] font-heading font-black tracking-tight text-white">
               <div className="flex flex-wrap">
                 {title.split("").map((char, i) => (
                   <span key={i} className="hero-char inline-block origin-bottom will-change-transform">{char}</span>
@@ -231,7 +231,7 @@ export default function Hero() {
 
             <div className="flex flex-col md:flex-row md:items-end justify-between mt-6 md:mt-12 border-t border-white/20 pt-4 md:pt-8 hero-fade gap-4 md:gap-6">
               <div className="flex-1 max-w-2xl">
-                <p className="text-sm sm:text-base md:text-xl lg:text-2xl font-serif-italic text-gray-300 leading-snug mb-4 md:mb-6">
+                <p className="text-base md:text-xl lg:text-2xl font-serif-italic text-gray-300 leading-snug mb-4 md:mb-6">
                   "Crafting scalable systems that merge performance, functionality, and exceptional user experience."
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 text-[10px] md:text-xs font-mono uppercase tracking-wider opacity-70">
