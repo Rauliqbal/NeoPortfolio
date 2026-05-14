@@ -4,7 +4,6 @@ import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Footer from './components/Footer';
-import { Helmet } from 'react-helmet-async';
 import { Route, Routes } from 'react-router-dom';
 import Home from './views/Home';
 
