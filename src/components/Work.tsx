@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   return (
     <Link to={`${project.slug}`} target='_blank' className="group cursor-pointer">
-      <div className="work-card-inner relative overflow-hidden aspect-[4/5] mb-6">
+      <div className="work-card-inner relative overflow-hidden aspect-4/5 mb-6">
         <img
           src={`/images/${project.image}`}
           alt={project.title}

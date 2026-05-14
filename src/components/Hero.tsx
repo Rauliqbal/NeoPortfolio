@@ -152,7 +152,7 @@ export default function Hero() {
   return (
     <>
       <Loader loaderRef={loaderRef} />
-      <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-[#050505] text-[#e1e1e1]">
+      <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-background text-foreground">
         <div className="hero-bg absolute inset-0 z-0 overflow-hidden bg-[#030712]">
 
           {/* Base Gradient */}
@@ -161,13 +161,13 @@ export default function Hero() {
           {/* Main Blur Lights */}
           <div className="gradient-layer absolute inset-0">
 
-            <div className="gradient-1 transform-gpu absolute will-change-transform pointer-events-none -top-[15%] -left-[10%] w-[900px] h-[900px] rounded-full bg-blue-700/20 blur-[60px]" />
+            <div className="gradient-1 transform-gpu absolute will-change-transform pointer-events-none top-[-15%] left-[-10%] w-225 h-225 rounded-full bg-blue-700/20 blur-[60px]" />
 
-            <div className="gradient-2 transform-gpu will-change-transform absolute top-[20%] left-[35%] w-[700px] h-[700px] rounded-full bg-sky-500/50 blur-[80px] " />
+            <div className="gradient-2 transform-gpu will-change-transform absolute top-[20%] left-[35%] w-175 h-175 rounded-full bg-sky-500/50 blur-[80px] " />
 
-            <div className="gradient-3 transform-gpu will-change-transform absolute -bottom-[15%] -right-[10%] w-[900px] h-[900px] rounded-full bg-indigo-500/40 blur-[120px]" />
+            <div className="gradient-3 transform-gpu will-change-transform absolute bottom-[-15%] right-[-10%] w-225 h-225 rounded-full bg-indigo-500/40 blur-[120px]" />
 
-            <div className="absolute bottom-[10%] left-[20%] w-[500px] h-[500px] rounded-full bg-black/40 blur-[80px]" />
+            <div className="absolute bottom-[10%] left-[20%] w-125 h-125 rounded-full bg-black/40 blur-[80px]" />
           </div>
 
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(0,0,0,0.45)_100%)]" />
