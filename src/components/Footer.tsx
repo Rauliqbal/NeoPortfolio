@@ -57,7 +57,7 @@ export default function Footer() {
       </div>
       
       {/* Giant Background Text */}
-      <div className="absolute bottom-0 left-0 w-full overflow-hidden pointer-events-none opacity-5">
+      <div className="absolute bottom-0 left-0 w-full pointer-events-none opacity-5">
          <p className="text-[20vw] leading-[0.7] font-black text-center translate-y-[20%]">RAUL</p>
       </div>
     </footer>
