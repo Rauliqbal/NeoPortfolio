@@ -19,7 +19,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       </div>
       <div className="flex justify-between items-end border-b border-white/20 pb-4">
         <div>
-          <h3 className="text-4xl md:text-5xl font-heading mb-1">{project.title}</h3>
+          <h3 className="text-2xl md:text-4xl lg:text-5xl font-heading mb-1">{project.title}</h3>
           <span className="text-sm font-mono text-gray-400">{project.cat}</span>
         </div>
         <span className="text-sm font-mono">{project.year}</span>

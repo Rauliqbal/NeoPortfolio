@@ -132,12 +132,12 @@ export default function Intro() {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-28 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+        <div className="mt-14 md:mt-28 grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
           
           {/* Profile */}
           <div className="profile-card flex flex-col md:flex-row items-start gap-6">
             
-            <div className="profile-image mx-auto w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border border-zinc-800 shrink-0">
+            <div className="profile-image mx-auto w-32 h-32 rounded-full overflow-hidden border border-zinc-800 shrink-0">
               <img
                 src="./avatar.jpeg"
                 alt="Raul Iqbal"
