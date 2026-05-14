@@ -13,13 +13,13 @@ const Loader = ({ loaderRef }: LoaderProps) => {
   return (
     <div
       ref={loaderRef}
-      className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-[#050505]"
+      className="fixed inset-0 z-9999 flex items-center justify-center overflow-hidden bg-background"
     >
       {/* Glow background */}
-      <div className="absolute h-[540px] w-[500px] rounded-full bg-linear-to-tr from-cyan-400/40 to-indigo-600/70 blur-[140px]" />
+      <div className="absolute h-135 w-125 rounded-full bg-linear-to-tr from-cyan-400/40 to-indigo-600/70 blur-[140px]" />
 
       {/* Text */}
-      <h1 className="loader-text relative z-10 text-[5vw] md:text-[10vw] font-black tracking-[0.2em] text-white">
+      <h1 className="loader-text relative z-10 text-4xl md:text-5xl lg:text-8xl font-black tracking-[0.2em] text-white">
         RAULIQBAL
       </h1>
     </div>
@@ -180,7 +180,7 @@ export default function Hero() {
               <div className="text-[10px] md:text-xs font-mono uppercase tracking-widest opacity-60">
                 ( Est. 2022 )
               </div>
-              <div className="hidden md:block text-xs font-mono uppercase tracking-wider opacity-40 max-w-[200px]">
+              <div className="hidden md:block text-xs font-mono uppercase tracking-wider opacity-40 max-w-50">
                 Full Stack Developer<br />
                 <span className="text-white/60">& UI/UX Enthusiast</span>
               </div>
@@ -253,7 +253,7 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <span className="inline-block px-6 md:px-8 py-3 md:py-4 border border-white/30 rounded-full uppercase text-[10px] md:text-xs tracking-[0.2em] hover:bg-white hover:text-black transition-colors duration-300 cursor-pointer">
                   Scroll Down
                 </span>
